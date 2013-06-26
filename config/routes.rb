@@ -1,4 +1,5 @@
 FriendMemo::Application.routes.draw do
+
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -50,7 +51,12 @@ FriendMemo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
+
+  #OmniAuth
+  match "/auth/facebook/callback" => "sessions#callback"
+  match "/logout" => "sessions#destroy", :as => :logout
+
 
   # See how all your routes lay out with "rake routes"
 
