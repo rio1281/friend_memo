@@ -57,6 +57,8 @@ FriendMemo::Application.routes.draw do
   match "/auth/facebook/callback" => "sessions#callback"
   match "/logout" => "sessions#destroy", :as => :logout
 
+  match "/friends" => "friends#index"
+
 
   # See how all your routes lay out with "rake routes"
 
