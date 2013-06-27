@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  attr_accessible :uid
+  attr_accessible :uid, :token
 end

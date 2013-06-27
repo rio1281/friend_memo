@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
        redirect_to root_url, :notice => "ログインしました。"
     else
        # Userモデルに:uidが無い場合、データを新規作成してログインしてルートに遷移
-       user = User.create(uid: auth["uid"])
+       user = User.create(uid: auth["uid"], token: auth["credentials"]["token"])
        session[:user_id] = user.id
        redirect_to root_url, :notice => "Facebookアカウントと接続しました。"
     end
