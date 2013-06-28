@@ -1,5 +1,8 @@
 class FriendsController < ApplicationController
   def index
-    @friends = graph.get_connections("me", "friends")
+    @friends = current_user.friends
+  end
+
+  def show
   end
 end

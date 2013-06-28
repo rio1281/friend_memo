@@ -2,5 +2,5 @@
 <p><%= link_to "戻る" ,'/' %></p>
 
 <% @friends.each do |friend| %>
-  <p><%= friend["name"] %></p>
+  <p><%= link_to friend.name, friend_path(friend) %></p>
 <% end %>

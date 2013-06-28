@@ -57,7 +57,7 @@ FriendMemo::Application.routes.draw do
   match "/auth/facebook/callback" => "sessions#callback"
   match "/logout" => "sessions#destroy", :as => :logout
 
-  match "/friends" => "friends#index"
+  resources :friends, only: [:index, :show]
 
   match "/landing" => "home#landing_page"
 
