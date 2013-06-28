@@ -59,6 +59,8 @@ FriendMemo::Application.routes.draw do
 
   match "/friends" => "friends#index"
 
+  match "/landing" => "home#landing_page"
+
 
   # See how all your routes lay out with "rake routes"
 
