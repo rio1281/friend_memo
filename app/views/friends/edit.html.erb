@@ -1,0 +1,14 @@
+<h1><%= @friend.name %>さんのメモを編集</h1>
+
+<%= form_for(@friend) do |f| %>
+
+<div class="field">
+  <%= f.label :memo %>
+  <%= f.text_area :memo, :rows => 5 %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
