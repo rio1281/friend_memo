@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628172611) do
+ActiveRecord::Schema.define(:version => 20130714101041) do
 
   create_table "friends", :force => true do |t|
     t.string   "facebook_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130628172611) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "name"
+    t.string   "link"
   end
 
   add_index "friends", ["user_id"], :name => "index_friends_on_user_id"
