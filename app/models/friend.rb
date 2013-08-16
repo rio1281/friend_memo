@@ -7,6 +7,7 @@ class Friend < ActiveRecord::Base
     graph = Koala::Facebook::API.new(token)
     friends = graph.get_connections("me", "friends")
     friends.each do |friend|
+      friend["link"] = graph.get_object(friend['id'])["link"]
       Friend.find_or_create_by_user_id_and_facebook_id(user_id: user.id, facebook_id: friend["id"], name: friend["name"], link: friend["link"])
     end
   end
