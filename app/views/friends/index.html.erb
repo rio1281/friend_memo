@@ -2,8 +2,9 @@
 
 <% @friends.each do |friend| %>
   <li>
+  <%= image_tag "https://graph.facebook.com/#{friend.facebook_id}/picture" %>
   <%= link_to friend.name, friend_path(friend) %>
-  <%= link_to 'Edit', edit_friend_path(friend) %>
+  <%= link_to "Facebook", "https://www.facebook.com/#{friend.facebook_id}", target: :blank %>
   </li>
   <p><%= friend.memo %></p>
 <% end %>
