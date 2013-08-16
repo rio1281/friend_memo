@@ -1,5 +1,7 @@
 <p>検索Box</p>
 
+<p>友達（<%= @friends.length %>人）</p>
+
 <% @friends.each do |friend| %>
   <li>
   <%= image_tag "https://graph.facebook.com/#{friend.facebook_id}/picture" %>
@@ -7,4 +9,5 @@
   <%= link_to "Facebook", "https://www.facebook.com/#{friend.facebook_id}", target: :blank %>
   </li>
   <p><%= friend.memo %></p>
+  <%= link_to 'Edit', edit_friend_path(friend) %>
 <% end %>

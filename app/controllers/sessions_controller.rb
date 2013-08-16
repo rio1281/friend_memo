@@ -12,13 +12,13 @@ class SessionsController < ApplicationController
        # 既にユーザ情報があった場合　ログインしてルートに遷移
        Friend.create_new_by_facebook_api(user.token)
        session[:user_id] = user.id
-       redirect_to root_url, :notice => "ログインしました。"
+       redirect_to root_url
     else
        # Userモデルに:uidが無い場合、データを新規作成してログインしてルートに遷移
        user = User.create(uid: auth["uid"], token: auth["credentials"]["token"])
        Friend.create_new_by_facebook_api(user.token)
        session[:user_id] = user.id
-       redirect_to root_url, :notice => "Facebookアカウントと接続しました。"
+       redirect_to root_url
     end
 
   end
